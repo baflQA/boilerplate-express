@@ -54,7 +54,7 @@ app
     });
   })
   .post(function (req, res) {
-    res.status(201).send(req.body);
+    res.status(201).send(`${req.body.first} ${req.body.last}`);
   });
 
 module.exports = app;
