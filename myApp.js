@@ -51,7 +51,9 @@ app
   })
   .post(function (req, res) {
     console.log(req.query);
-    res.status(201).send();
+    res.status(200).send({
+        name: `${req.query.firstname} ${req.query.lastname}`,
+      });
   });
 
 module.exports = app;
