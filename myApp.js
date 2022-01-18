@@ -42,4 +42,16 @@ app.get("/:word/echo", function (req, res) {
   });
 });
 
+app
+  .route("/name")
+  .get(function (req, res) {
+    res.send({
+      name: `${req.query.firstname} ${req.query.lastname}`,
+    });
+  })
+  .post(function (req, res) {
+    console.log(req.query);
+    res.status(201).send();
+  });
+
 module.exports = app;
