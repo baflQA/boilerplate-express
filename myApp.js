@@ -46,13 +46,13 @@ app
   .route("/name")
   .get(function (req, res) {
     res.send({
-      name: `${req.query.firstname} ${req.query.lastname}`,
+      name: `${req.query.first} ${req.query.last}`,
     });
   })
   .post(function (req, res) {
     console.log(req.query);
     res.status(200).send({
-        name: `${req.query.firstname} ${req.query.lastname}`,
+        name: `${req.query.first} ${req.query.last}`,
       });
   });
 
