@@ -21,7 +21,7 @@ app.get(
   },
   function (req, res) {
     res.send({
-      "time": req.time,
+      time: req.time,
     });
   }
 );
@@ -33,6 +33,12 @@ app.get("/json", function (req, res) {
   }
   res.json({
     message: message,
+  });
+});
+
+app.get("/:word/echo", function (req, res) {
+  res.send({
+    echo: req.params.word,
   });
 });
 
