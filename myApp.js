@@ -1,6 +1,6 @@
 var express = require("express");
-require("dotenv").config();
 var app = express();
+require("dotenv").config();
 
 app.use(function (req, res, next) {
   console.log(`${req.method} ${req.path} - ${req.ip}`);
@@ -21,7 +21,7 @@ app.get(
   },
   function (req, res) {
     res.send({
-        time: req.time
+      "time": req.time,
     });
   }
 );
