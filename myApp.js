@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var bodyParser = require("body-parser")
+var bodyParser = require("body-parser");
 require("dotenv").config();
 
 app.use(function (req, res, next) {
@@ -10,8 +10,7 @@ app.use(function (req, res, next) {
 
 app.use("/public", express.static(__dirname + "/public"));
 
-app.use(bodyParser.urlencoded({extended: false}));
-
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
@@ -54,7 +53,9 @@ app
     });
   })
   .post(function (req, res) {
-    res.status(201).send(`${req.body.first} ${req.body.last}`);
+    res.status(201).send({
+      name: `${req.body.first} ${req.body.last}`,
+    });
   });
 
 module.exports = app;
